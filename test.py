@@ -18,7 +18,14 @@ loss += mse_loss(t1, t2).cuda()
 loss *= 0.2
 print(mse_loss(t1, t2))
 print(loss)
-loss.backward()
+
+
+new_lose = (t1 - t2).pow(2).sum() / (4 * 5 * 5)
+new_lose2 = (t1 - t2).pow(2)
+
+print(new_lose2)
+print(new_lose)
+
 # IMG_SIZE = 512
 # print(cuda.is_available())
 # print(type(cuda.current_device()))
