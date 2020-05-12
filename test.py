@@ -9,22 +9,26 @@ import matplotlib.pyplot as plt
 from torch import tensor
 from torch.nn.functional import mse_loss
 
-t1 = tensor([1., 22., 33., 4., 23., 33.]).cuda()
-t2 = tensor([1., 22., 12., 323., 13., 32133.]).cuda()
-print(t1)
-
-loss = torch.zeros(1).cuda()
-loss += mse_loss(t1, t2).cuda()
-loss *= 0.2
-print(mse_loss(t1, t2))
-print(loss)
 
 
-new_lose = (t1 - t2).pow(2).sum() / (4 * 5 * 5)
-new_lose2 = (t1 - t2).pow(2)
-
-print(new_lose2)
-print(new_lose)
+# t1 = tensor([1., 22., 33., 4., 23., 33.]).cuda()
+# t2 = tensor([1., 22., 12., 323., 13., 32133.]).cuda()
+# print(t1)
+#
+# loss = torch.zeros(1).cuda()
+# loss += mse_loss(t1, t2).cuda()
+# loss *= 0.2
+# print(mse_loss(t1, t2))
+# print(loss)
+#
+# print("Tets")
+#
+#
+# new_lose = (t1 - t2).pow(2).sum() / (4 * 5 * 5)
+# new_lose2 = (t1 - t2).pow(2)
+#
+# print(new_lose2)
+# print(new_lose)
 
 # IMG_SIZE = 512
 # print(cuda.is_available())
@@ -33,7 +37,8 @@ print(new_lose)
 # CUDA_DEVICE = torch.device("cuda:{}".format(cuda.current_device()))
 # print(CUDA_DEVICE)
 #
-# vgg19 = models.vgg19(pretrained=True)
+vgg19 = models.vgg19(pretrained=True)
+print(vgg19)
 # vgg19.cuda(CUDA_DEVICE)
 # for p in vgg19.parameters():
 #     p.requires_grad = False
